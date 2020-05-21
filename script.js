@@ -37,9 +37,23 @@ function addToData(data){
     console.log(vechicleData)
 }
 
+function renderTableData(data){
+    var res = document.getElementById('results');
+    var keys = Object.keys(data[0]);
+    var headerDiv = document.createElement('div');
+    keys.forEach(function(value){
+        var headerName = document.createElement('div')
+        headerName.textContent = value.toUpperCase();
+        headerDiv.append(headerName)
+    })
+    res.append(headerDiv);
+}
+
+
 window.addEventListener('load',function(){
     var form = document.querySelector("form");
     form.addEventListener('submit',function(){
-        handleForm(addToData)
+        handleForm(addToData);
+        renderTableData(vechicleData);
     });
 })
