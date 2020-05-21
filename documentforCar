@@ -1,0 +1,10 @@
+Array.from(A)
+A:
+A can be an array to convert to an array or a string in 
+which every alphabet of the string is to be converted
+to an element of the new array instance.
+
+
+// Here input array is [1,2,3] and output become bouble of each elements. 
+console.log(Array.from([1, 2, 3], x => x + x)); 
+Array [2, 4, 6]

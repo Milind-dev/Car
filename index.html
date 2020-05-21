@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            display: flex;
+            padding: 5%;
+        }
+        body > *{
+            flex: 1;
+            border: 1px solid dodgerblue;
+        }
+        form{
+            display: flex;
+            flex-direction: column;
+            height: 200px;
+        }
+        form > * {
+            flex: 1;
+        }
+        #results > * {
+            display: flex;
+        }
+        #results > * > *{
+            flex:1;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="form-body">
+        <form>
+            <label>
+                Name:
+                <input name="name"/>
+            </label>
+            <label>
+                Model:
+                <input name="models"/>
+            </label>
+            <label>
+                Price:
+                <input name="price"/>
+            </label>
+            <input type="submit"/>
+        </form>
+    </div>
+    <div id="results">
+        Data 
+        <div id="result-headers">
+            <div>Name</div>
+            <div>Model</div>
+            <div>Price</div>
+        </div>
+        <div id="result-headers">
+            <div>Name</div>
+            <div>Model</div>
+            <div>Price</div>
+        </div>
+        <div id="result-headers">
+            <div>Name</div>
+            <div>Model</div>
+            <div>Price</div>
+        </div>
+        
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
+
+<!-- 
+        create Form 
+        take some input
+        vehicle information 
+        name models price
+        create some data in a tabular form
+        sort / filter some price , category
+     -->
