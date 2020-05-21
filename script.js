@@ -39,6 +39,7 @@ function addToData(data){
 
 function renderTableData(data){
     var res = document.getElementById('results');
+    res.innerHTML= ""
     var keys = Object.keys(data[0]);
     var headerDiv = document.createElement('div');
     keys.forEach(function(value){
@@ -46,8 +47,20 @@ function renderTableData(data){
         headerName.textContent = value.toUpperCase();
         headerDiv.append(headerName)
     })
-    res.append(headerDiv);
+
+    var tabledata = document.createElement('div');
+    data.forEach(function(item){
+        var row = document.createElement('div');
+        keys.forEach(function(key){
+            var rowName = document.createElement('div')
+            rowName.textContent = item[key];
+            row.append(rowName);
+        })
+        tabledata.append(row);
+    })
+    res.append(headerDiv,tabledata);
 }
+
 
 
 window.addEventListener('load',function(){
