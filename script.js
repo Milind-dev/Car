@@ -15,7 +15,10 @@
 
 // step first handleform desing then callback inside
 
-function handleForm(){
+
+var vechicleData = [];
+
+function handleForm(callback){
     event.preventDefault();
     var children = event.target.querySelectorAll('input')
     var data = {};
@@ -24,15 +27,19 @@ function handleForm(){
             data[elem.name]=elem.value
         }
     });
-    console.log(data)
+    // console.log(data)
+    callback(data);
 
 }
 
 function addToData(data){
-    
+    vechicleData.push(data);
+    console.log(vechicleData)
 }
 
 window.addEventListener('load',function(){
     var form = document.querySelector("form");
-    form.addEventListener('submit',handleForm);
+    form.addEventListener('submit',function(){
+        handleForm(addToData)
+    });
 })
