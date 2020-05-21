@@ -40,15 +40,17 @@ function addToData(data){
 function renderTableData(data){
     var res = document.getElementById('results');
     res.innerHTML= ""
+    var tabledata = document.createElement('div');
     var keys = Object.keys(data[0]);
-    var headerDiv = document.createElement('div');
+    var headerDiv = document.createElement('div'); 
+    headerDiv.setAttribute('class','results-header')
     keys.forEach(function(value){
         var headerName = document.createElement('div')
         headerName.textContent = value.toUpperCase();
         headerDiv.append(headerName)
     })
+    tabledata.append(headerDiv)
 
-    var tabledata = document.createElement('div');
     data.forEach(function(item){
         var row = document.createElement('div');
         keys.forEach(function(key){
